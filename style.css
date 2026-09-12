@@ -16,9 +16,9 @@
   --text-secondary: #c2c5ce;
   --muted: #888c96;
   
-  --accent: #e07a5f; /* Restrained warm terracotta / ochre */
-  --accent-glow: rgba(224, 122, 95, 0.25);
-  --accent-soft: rgba(224, 122, 95, 0.12);
+  --accent: #ff6b35; /* Vibrant Orange */
+  --accent-glow: rgba(255, 107, 53, 0.28);
+  --accent-soft: rgba(255, 107, 53, 0.14);
 
   --border: rgba(255, 255, 255, 0.09);
   --border-strong: rgba(255, 255, 255, 0.2);
@@ -1367,12 +1367,33 @@ ul {
    -------------------------------------------------------------------------- */
 .contact-title {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 6vw, 5.8rem);
   font-weight: 800;
-  line-height: 0.95;
+  font-size: clamp(3.5rem, 9.5vw, 9.5rem);
+  line-height: 0.9;
   letter-spacing: -0.03em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.contact-line {
+  display: block;
+  position: relative;
+  transition: transform var(--transition-smooth);
+}
+
+.contact-line-1,
+.contact-line-3 {
   color: var(--foreground);
-  margin-bottom: 24px;
+}
+
+.contact-line-2 {
+  color: transparent;
+  -webkit-text-stroke: 1.8px var(--accent);
+  transition: color var(--transition-smooth);
+}
+
+.contact-title:hover .contact-line-2 {
+  color: var(--accent);
 }
 
 .contact-subtitle {
