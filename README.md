@@ -39,14 +39,11 @@ Data Science, and AI.
 ### Brain Gains
 A gamified learning platform designed to make learning more interactive
 through lessons, quizzes, progress tracking, and rewards.
-### Smart Campus
-A project focused on improving everyday experiences and interactions
-within a college campus.
+### Then She Was Gone
+An interactive project inspired by mystery and storytelling.
 ### SideQuest
 A project exploring better ways to discover and experience places
 beyond the usual tourist spots.
-### Then She Was Gone
-An interactive project inspired by mystery and storytelling.
 
 ## ✦ Currently Learning
 - Data Structures & Algorithms
