@@ -1084,6 +1084,17 @@ ul {
   background: var(--border);
 }
 
+.timeline-track-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(180deg, var(--accent) 0%, #ff8c5a 100%);
+  box-shadow: 0 0 10px var(--accent);
+  transition: height 0.1s linear;
+}
+
 .timeline-item {
   position: relative;
   margin-bottom: 48px;
@@ -1095,16 +1106,20 @@ ul {
   position: absolute;
   left: -30px;
   top: 6px;
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   background: var(--background);
-  border: 2px solid var(--accent);
-  transition: background var(--transition-fast);
+  border: 2px solid var(--border-strong);
+  transition: background var(--transition-smooth), border-color var(--transition-smooth), transform var(--transition-smooth), box-shadow var(--transition-smooth);
 }
 
+.timeline-item.active .timeline-marker,
 .timeline-item:hover .timeline-marker {
   background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 14px var(--accent);
+  transform: scale(1.25);
 }
 
 .timeline-content {
@@ -1112,11 +1127,13 @@ ul {
   border: 1px solid var(--border);
   padding: 24px 30px;
   border-radius: 4px;
-  transition: border-color var(--transition-fast);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
+.timeline-item.active .timeline-content,
 .timeline-item:hover .timeline-content {
-  border-color: var(--border-strong);
+  border-color: var(--accent);
+  box-shadow: 0 4px 20px rgba(255, 107, 53, 0.08);
 }
 
 .timeline-year {

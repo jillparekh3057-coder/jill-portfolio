@@ -414,7 +414,9 @@
         </div>
 
         <div class="timeline-container">
-          <div class="timeline-track"></div>
+          <div class="timeline-track">
+            <div class="timeline-track-progress"></div>
+          </div>
 
           <!-- Item 1: CLASS X ICSE -->
           <div class="timeline-item">
@@ -670,6 +672,49 @@
       </div>
     </div>
   </footer>
+
+  <!-- TIMELINE SCROLL ANIMATION SCRIPT -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.querySelector('.timeline-container');
+      const trackProgress = document.querySelector('.timeline-track-progress');
+      const items = document.querySelectorAll('.timeline-item');
+
+      if (!container || !items.length) return;
+
+      function updateTimelineOnScroll() {
+        const containerRect = container.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        
+        // Trigger point at 65% of screen height
+        const triggerY = viewportHeight * 0.65;
+        
+        // Calculate progress line fill percentage
+        const topDistance = triggerY - containerRect.top;
+        const totalHeight = containerRect.height;
+        let progress = (topDistance / totalHeight) * 100;
+        progress = Math.max(0, Math.min(100, progress));
+
+        if (trackProgress) {
+          trackProgress.style.height = `${progress}%`;
+        }
+
+        // Activate markers sequentially as user scrolls past them
+        items.forEach(item => {
+          const itemRect = item.getBoundingClientRect();
+          if (itemRect.top <= triggerY) {
+            item.classList.add('active');
+          } else {
+            item.classList.remove('active');
+          }
+        });
+      }
+
+      window.addEventListener('scroll', updateTimelineOnScroll, { passive: true });
+      window.addEventListener('resize', updateTimelineOnScroll, { passive: true });
+      updateTimelineOnScroll();
+    });
+  </script>
 
 </body>
 
