@@ -9,7 +9,7 @@ and the things I'm currently working on.
 I'm interested in understanding how technology works and learning by
 building practical projects.
 Currently, I'm strengthening my programming and problem-solving
-foundations while exploring web development, backend technologies,
+foundations while exploring web development, frontend technologies,
 Data Science, and AI.
 
 ## ✦ What's Inside
@@ -51,7 +51,7 @@ An interactive project inspired by mystery and storytelling.
 ## ✦ Currently Learning
 - Data Structures & Algorithms
 - JavaScript
-- Backend Development
+- Frontend Development
 - Data Science
 - Artificial Intelligence
 - Git & GitHub
